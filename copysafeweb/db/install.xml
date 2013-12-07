@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/copysafeweb/db" VERSION="20070401" COMMENT="XMLDB file for Moodle mod/copysafeweb"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="copysafeweb" COMMENT="Default comment for newmodule, please edit me" NEXT="copysafeweb_settings">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="Course newmodule activity belongs to" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" ENUM="false" COMMENT="name field for moodle instances" PREVIOUS="course" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="text" LENGTH="medium" NOTNULL="false" SEQUENCE="false" ENUM="false" COMMENT="General introduction of the newmodule activity" PREVIOUS="name" NEXT="introformat"/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" COMMENT="Format of the intro field (MOODLE, HTML, MARKDOWN...)" PREVIOUS="intro" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="introformat" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="timecreated"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+      <TABLE NAME="copysafeweb_settings" COMMENT="Stores the image attributes." PREVIOUS="copysafeweb" >
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="11" NOTNULL="true" SEQUENCE="true" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image name." PREVIOUS="id" NEXT="postid"/>
+        <FIELD NAME="postid" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image id." PREVIOUS="name" NEXT="border"/>
+        <FIELD NAME="border" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image border." PREVIOUS="postid" NEXT="border_color"/>
+        <FIELD NAME="border_color" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image border_color." PREVIOUS="border" NEXT="text_color"/>
+        <FIELD NAME="text_color" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image text_color." PREVIOUS="border_color" NEXT="loading_message"/>
+        <FIELD NAME="loading_message" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image loading message." PREVIOUS="text_color" NEXT="key_safe"/>
+        <FIELD NAME="key_safe" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false" COMMENT="Image keysafe." PREVIOUS="loading_message" NEXT="capture_safe"/>
+        <FIELD NAME="capture_safe" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false" COMMENT="Image capturesafe." PREVIOUS="key_safe" NEXT="menu_safe"/>
+        <FIELD NAME="menu_safe" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false" COMMENT="Image menusafe." PREVIOUS="capture_safe" NEXT="remote_safe"/>
+        <FIELD NAME="remote_safe" TYPE="int" LENGTH="11" NOTNULL="false"  SEQUENCE="false" COMMENT="Image remotesafe." PREVIOUS="menu_safe" NEXT="hyperlink"/>
+        <FIELD NAME="hyperlink" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image hyperlink." PREVIOUS="remote_safe" NEXT="target"/>
+        <FIELD NAME="target" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image target." PREVIOUS="hyperlink" NEXT="width"/>
+        <FIELD NAME="width" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image width." PREVIOUS="target" NEXT="height"/>
+        <FIELD NAME="height" TYPE="char" LENGTH="255" NOTNULL="false"  SEQUENCE="false" COMMENT="Image height." PREVIOUS="width"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+  <STATEMENTS>
+    <STATEMENT NAME="insert log_display" TYPE="insert" TABLE="log_display" COMMENT="Initial insert of records on table log_display. Each record describes how data will be showed by log reports.">
+      <SENTENCES>
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('newmodule', 'add', 'newmodule', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('newmodule', 'update', 'newmodule', 'name')" />
+        <SENTENCE TEXT="(module, action, mtable, field) VALUES ('newmodule', 'view', 'newmodule', 'name')" />
+      </SENTENCES>
+    </STATEMENT>
+  </STATEMENTS>
+</XMLDB>
