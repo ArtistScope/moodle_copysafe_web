@@ -1,18 +1,126 @@
-<p><img alt="" src="<?php echo $CFG->wwwroot?>/mod/copysafeweb/icon.gif" />&nbsp;<b>CopysafeWeb</b></p>
-<div class="indent">
-<p>This file contains the main description of the newmodule module. Usually, it's used to
-explain the main features of the activity, with a natural language. Also, the overall
-process of the activity is detailed here with its pedagogical foundation.</p>
 
-<p>From a developer perspective, this "help" directory will contain simple html files
-like this that you will be able to link from newmodule code when any sort of
-explanation is necessary (it's easier to add those links automatically, both from
-the formslib stuff (see mod_form.php) and from everywhere else (see the helpbutton()
-function).</p>
-
-<p>Also, don't forget to add one link to this help file from the newmodule/help "index.html"
-file, it will allow Moodle to show all the existing help files related to the module when the
-complete list of available help files is requested.</p>
-
-<p>Please, replace me with the real information about the newmodule!</p>
-</div>
+<p><img alt="" src="<?php echo $CFG->wwwroot?>/mod/copysafeweb/icon.gif" />&nbsp;<b>Copysafe 
+  Web for Moodle</b></p>
+This extension enables the use of CopySafe Web in Moodle pages, 
+				resulting in web pages safe from all copy including Print Screen 
+				and screen capture. By adding a CopySafe Web encrypted image to 
+				any web page will add protection for all content on that page 
+				including normal images, text and video. So even if a small 20 x 
+				20 pixel CopySafe image is added, when it loads it activates the 
+				CopySafe Web browser plugin to control copy methods and prevent 
+				screenshots. CopySafe Web is supported in popular web browsers across all Windows computers 
+				since XP (92% of net users).<br>
+&nbsp;<br>
+                 
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+                      
+    <td dir="ltr" align="center" valign="top">&nbsp; </td>
+                      <td dir="ltr" align="left" valign="top" class="text">
+						<ul>
+										<li>Copy protect images and all other web 
+										page content.</li>
+										<li>Safe from Print Screen and all screen 
+										capture software.</li>
+										<li>Encrypted images cannot be retrieved 
+										from browser cache.</li>
+										<li>Domain locked images cannot be used 
+										elsewhere</li>
+										<li>Encrypted images stored on the server are safe 
+										from your web host.</li>
+										<li>Encrypted images cannot be saved or scraped.</li>
+						</ul>
+						</td>
+                      <td dir="ltr" align="right" valign="top">&nbsp;
+						</td>
+                    </tr>
+                  </table>
+                  <br>Normally, adding the code to use CopySafe Web on a pages 
+				as complex and sophisticated as Moodle course resources can be 
+				frustrating even for the most experienced web developer, but by 
+				using this Moodle extension, inserting CopySafe Web protection 
+				is now as simple as a clicking a button and ticking the 
+				checkboxes for the options that you want to employ. From the 
+				Moodle course editor you can add CopySafe Web images from the 
+				TinyMice HTML editor by clicking the [C] button in the editor's 
+				tool bar. The shortcode (placeholder) will then be inserted at 
+				the current cursor position. Image size and protection settings 
+				can be set as you select the image to use or at any time later 
+				by simply editing parameters the in the shortcode. <br>
+				<h3>
+				How the Moodle CopySafe Extension Works</h3>
+				When editing a page or post, click on the [C] icon above the HTML editor toolbar to insert the 
+				&quot;shortcode&quot;, where the cursor was last placed in the text area. After uploading or selecting an existing image (from a previous upload), you can then nominate the security settings to use for the page or post. Different pages can use different security settings, for example, to allow the submission of web forms you may need to enable use of the keyboard.<br><br>
+				
+<table class="text" border="1" cellpadding="3" cellspacing="0" style="border-color: #DDDDDD; border-collapse:collapse">
+  <tr> 
+    <td><b>&nbsp;Width&nbsp;</b></td>
+    <td>&nbsp;Width of the image in pixels.&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;Height&nbsp;</b></td>
+    <td>&nbsp;height of the image in pixels.&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;CaptureSafe</b></td>
+    <td>&nbsp;Enable protection from Print Screen and screen capture</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;KeySafe</b></td>
+    <td>&nbsp;Disable use of the keyboard while the page is on display</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;MenuSafe</b></td>
+    <td>&nbsp;Disable use of web browser menus (browser-dependent)</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;RemoteSafe</b></td>
+    <td>&nbsp;Prevent computers using remote or virtual connection from access</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;Border&nbsp;Frame</b></td>
+    <td>&nbsp;Add a border to the image nominating frame thickness and color&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;Hyperlink&nbsp;</b></td>
+    <td>&nbsp;Add a clickable link to the image and nominate target frame&nbsp;</td>
+  </tr>
+</table>
+				<h3>Default Settings for this Moodle Extension</h3>
+				Default settings can be applied to all CopySafe Web pages and 
+				posts. Most useful for corporate networks and others who need to 
+				limit access to certain types of web browsers, the default 
+				settings page allows you to nominate which ones you want to 
+				allow. Any browsers not qualifying will be redirected. You can 
+				also select from 3 modes which can be changed at any time: <br>
+&nbsp;<br>
+				
+<table class="text" border="1" cellpadding="3" cellspacing="0" style="border-color: #DDDDDD; border-collapse:collapse">
+  <tr> 
+    <td><b>&nbsp;Demo Mode</b></td>
+    <td>&nbsp;Allows use of the Extension without requiring a CopySafe Web license*</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;Licensed</b></td>
+    <td>&nbsp;For users licensed to use the CopySafe Web software for encrypting 
+      images</td>
+  </tr>
+  <tr> 
+    <td><b>&nbsp;Debug Mode</b></td>
+    <td>&nbsp;Displays the HTML for object tag instead of displaying the image</td>
+  </tr>
+</table>
+				
+<p><br>
+  * While the CopySafe Web Moodle Extension is designed for use by CopySafe Web 
+  software users, it will add a layer of protection for the page even in "demo" 
+  mode. For example, in demo mode, you still have protection from right-mouse-click, 
+  drag-and-drop and also control which web browsers can access the page. </p>
+<p>Every <a href="https://www.artistscope.net/ssl/order/order_web.asp" target="_blank">CopySafe 
+  Web&nbsp;software license</a> provides for unlimited use on the licensed domain. 
+  <a href="http://www.artistscope.com/copysafe_web_demos.asp" target="_blank">Online 
+  demonstration</a>s protecting a variety of media can be seen online.<br>
+</p>
+<p>For more information please see the <a href="http://www.artistscope.com/copysafe_web_protection_moodle_plugin.asp" target="_blank">module's 
+  page at ArtistScope</a>.</p>
+<p>&nbsp; </p>
