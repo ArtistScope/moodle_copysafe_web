@@ -1,19 +1,16 @@
 <?php  // $Id: view.php,v 1.6.2.3 2009/04/17 22:06:25 skodak Exp $
 
 /**
- * This page prints a particular instance of newmodule
+ * This page prints a particular instance of CopysafeWeb
  *
- * @author  Your Name <your@email.address>
+ * @author  ArtistScope
  * @version $Id: view.php,v 1.6.2.3 2009/04/17 22:06:25 skodak Exp $
- * @package mod/newmodule
+ * @package mod/CopysafeWeb
  */
 
-/// (Replace newmodule with the name of your module and remove this line)
-
-//require_once(dirname(dirname(dirname(__FILE__))).'/config.php');
-//require_once(dirname(__FILE__).'/lib.php');
     require_once('../../config.php');
     require_once('lib.php');
+
 $id = optional_param('id', 0, PARAM_INT); // course_module ID, or
 $a  = optional_param('a', 0, PARAM_INT);  // newmodule instance ID
 
