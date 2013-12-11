@@ -1,4 +1,10 @@
 <?php //$Id: mod_form.php,v 1.2.2.3 2009/03/19 12:23:11 mudrd8mz Exp $
+if (!defined('MOODLE_INTERNAL')) {
+    die('Direct access to this script is forbidden.');    ///  It must be included from a Moodle page
+}
+
+header("Location: ".$CFG->wwwroot.'/course/edit.php?category=1&returnto=topcatmanage');
+die();
 
 /**
  * This file defines the main newmodule configuration form
