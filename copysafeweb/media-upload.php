@@ -5,7 +5,7 @@
 	$upload_path ="../../copysafewebimage/";
 ?>
 
-<link rel='stylesheet' href='http://code.jquery.com/ui/1.9.2/themes/redmond/jquery-ui.css' type='text/css' />
+<link rel='stylesheet' href='jquery-ui.css' type='text/css' />
 <link rel='stylesheet' href='lib/uploadify/uploadify.css' type='text/css' />
 <link rel='stylesheet' href='wp-copysafe-web.css' type='text/css' />
 <!--<script type='text/javascript' src='lib/uploadify/jquery-1.3.2.min.js'></script>-->
